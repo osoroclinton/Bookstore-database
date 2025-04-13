@@ -91,7 +91,7 @@ status_date date
 
 
 ## Table relationships - this guided the design of our ERD
-author - book_author one to many (1:N)- one author can be associated with many books (if they wrote multiple books)
+* author - book_author one to many (1:N)- one author can be associated with many books (if they wrote multiple books)
 * book - book_author one to many (1:N) - one book can be associated with many entries in the book_author table (if it has multiple authors)
 * book_author - author - book - many to many (M:N) - one author can write many books and one book can have many authors
 * book - book_language - many to one (N:1) - many books can have one language. 
