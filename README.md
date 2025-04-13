@@ -5,89 +5,89 @@
 
 
 ## Tables in the database
-book
-book_id pk int 
-title varchar
-isbn varchar
-publication_date date
-language_id int - fk -> book_language
-publisher_id int - fk -> publisher_id
-price 
+### book
+* book_id pk int 
+* title varchar
+* isbn varchar
+* publication_date date
+* language_id int - fk -> book_language
+* publisher_id int - fk -> publisher_id
+* price 
 
-author
-author_id int
-author_name varchar
+### bauthor
+* author_id int
+* author_name varchar
 
-book_author
-book_id int fk - book
-author_id int fk - author
+### book_author
+* book_id int fk - book
+* author_id int fk - author
 
-publisher
-publisher_id int pk 
-publisher_name varchar
+### publisher
+* publisher_id int pk 
+* publisher_name varchar
 
-book_language
-language_id pk int 
-language_code varchar
+### book_language
+* language_id pk int 
+* language_code varchar
 
-customer
-customer_id -pk int 
-first_name varchar
-last_name varchar
-email varchar
-phone int
+### customer
+* customer_id -pk int 
+* first_name varchar
+* last_name varchar
+* email varchar
+* phone int
 
-county 
-country_id pk int
-country_code varchar
-country_name varchar
+### county 
+* country_id pk int
+* country_code varchar
+* country_name varchar
 
-address_status
-status_id pk int
-address_status 
+### address_status
+* status_id pk int
+* address_status 
 
-address
-address_id pk - int
-street_no  varchar
-street_name  varchar
-city varchar
-postal_code varchar
-country_id fk -> country
+### address
+* address_id pk - int
+* street_no  varchar
+* street_name  varchar
+* city varchar
+* postal_code varchar
+* country_id fk -> country
 
-customer_address
-customer_id fk -> customer 
-address_id fk -> address
-status_id fk -> address_status
+### customer_address
+* customer_id fk -> customer 
+* address_id fk -> address
+* status_id fk -> address_status
 
-shipping_method
-method_id pk
-method_name varchar
-cost decimal
+### shipping_method
+* method_id pk
+* method_name varchar
+* cost decimal
 
-cust_order
-order_id pk int
-customer_id fk -> customer
-order_date date
-shipping_method_id fk -> shipping_method
-shipping_address_id fk -> address
-order_total decimal
+### cust_order
+* order_id pk int
+* customer_id fk -> customer
+* order_date date
+* shipping_method_id fk -> shipping_method
+* shipping_address_id fk -> address
+* order_total decimal
 
-order_status
-status_id pk
-status_details varchar
+### order_status
+* status_id pk
+* status_details varchar
 
-order_line
-line_id pk
-order_id fk cust_order
-book_id fk book
-price decimal
-quantity int
+### order_line
+* line_id pk
+* order_id fk cust_order
+* book_id fk book
+* price decimal
+* quantity int
 
-order_history
-history_id int 
-order_id fk -> cust_order
-status_id fk -> order_status
-status_date date
+### order_history
+* history_id int 
+* order_id fk -> cust_order
+* status_id fk -> order_status
+* status_date date
 
 
 ## Table relationships - this guided the design of our ERD
